@@ -1,0 +1,43 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #232f3e;
+  padding: 16px 32px;
+  font-family: Amazon Ember, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.navbar-group {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-title {
+  margin: 0;
+  margin-left: 16px;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.navbar-date {
+  margin: 0;
+  margin-right: 16px;
+  text-align: right;
+}
+
+.navbar-message {
+  margin: 0;
+  margin-right: 16px;
+  text-transform: capitalize;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-title {
+    display: none;
+  }
+}

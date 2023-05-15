@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+  mysql:
+    image: yazanhamdan/mysql-image-cloud
+    container_name: mysql
+    ports:
+      - 3306:3306
+
+  backend:
+    build: .
+    container_name: backend_apis
+    ports:
+      - 3000:3000
+    depends_on:
+      - mysql
+    environment:
+      - DB_USERNAME=user
+      - DB_PASSWORD=password
+      - DB_DATABASE=urgentnews
+      - DB_HOST=mysql
+      - PORT=3000
+

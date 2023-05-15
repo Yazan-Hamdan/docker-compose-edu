@@ -1,0 +1,35 @@
+version: '3.9'
+
+services:
+  frontend:
+    container_name: frontend_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4200:4200"
+    depends_on:
+      - backend
+    environment:
+      - REACT_APP_API_BASE_URL=http://localhost:3000
+
+  backend:
+    image: yazanhamdan/backend
+    container_name: backend_apis
+    ports:
+      - 3000:3000
+    depends_on:
+      - mysql
+    environment:
+      - DB_USERNAME=user
+      - DB_PASSWORD=password
+      - DB_DATABASE=urgentnews
+      - DB_HOST=mysql
+      - PORT=3000
+
+  mysql:
+    image: yazanhamdan/mysql-image-cloud
+    container_name: mysql
+    ports:
+      - 3306:3306
+
