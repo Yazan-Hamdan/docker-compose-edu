@@ -15,7 +15,7 @@ const connection = mysql.createPool({
 app.get('/v1/news', async (_, res) => {
   try {
     const result = await connection.query('SELECT * FROM news ORDER BY created_at DESC LIMIT 10')
-    res.json(result)
+    res.json(result[0])
   } catch (err) {
     console.error(err)
     res.status(500).send('Internal Server Error')

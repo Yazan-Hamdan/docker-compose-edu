@@ -11,7 +11,7 @@ services:
     build: .
     container_name: backend_apis
     ports:
-      - 3000:3000
+      - 4200:4200
     depends_on:
       - mysql
     environment:
@@ -19,5 +19,5 @@ services:
       - DB_PASSWORD=password
       - DB_DATABASE=urgentnews
       - DB_HOST=mysql
-      - PORT=3000
+      - PORT=4200
 

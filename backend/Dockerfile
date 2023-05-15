@@ -14,8 +14,8 @@ RUN npm install
 # Copy all files from the local directory to the container directory
 COPY . .
 
-# Expose port 3000 to the host machine
-EXPOSE 3000
+# Expose port 4200 to the host machine
+EXPOSE 4200
 
 # Set the default command to run when the container starts
 CMD ["npm", "start"]

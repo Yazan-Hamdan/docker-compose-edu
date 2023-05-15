@@ -12,7 +12,7 @@ Before running the project, make sure you have Docker and Docker Compose install
 * Navigate to the project's root directory
 * Run the following command: `docker-compose up --build`.
 * Wait for the containers to start up. You should see output in the console indicating that the MySQL database, backend server, and frontend application are all running.
-* once the containers are running, you can access the frontend application by navigating to `http://172.26.0.4:3000`
+* once the containers are running, you can access the frontend application by navigating to `http://localhost:3000`
 
 
 ## Database
@@ -35,7 +35,9 @@ The backend server is a simple ExpressJS application that serves a single API ro
 
 The backend server is built using Node.js and is packaged as a Docker container.
 
+The application is running on `http://localhost:4200`
+
 
 ## Frontend 
 
-The frontend application is a simple ReactJS application that fetches data from the backend API and displays the 10 most recent news articles. The frontend application is packaged as a Docker container and can be accessed in your web browser at `http://172.26.0.4:3000` once the containers are running.
+The frontend application is a simple ReactJS application that fetches data from the backend API and displays the 10 most recent news articles. The frontend application is packaged as a Docker container and can be accessed in your web browser at `http://localhost:3000` once the containers are running.

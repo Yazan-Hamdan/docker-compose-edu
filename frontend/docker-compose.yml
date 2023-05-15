@@ -7,17 +7,17 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "4200:4200"
+      - 3000:3000
     depends_on:
       - backend
     environment:
-      - REACT_APP_API_BASE_URL=http://localhost:3000
+      - REACT_APP_API_BASE_URL=http://localhost:4200
 
   backend:
-    image: yazanhamdan/backend
-    container_name: backend_apis
+    image: yazanhamdan/docker-compose-edu-backend
+    container_name: backend
     ports:
-      - 3000:3000
+      - 4200:4200
     depends_on:
       - mysql
     environment:
@@ -25,7 +25,7 @@ services:
       - DB_PASSWORD=password
       - DB_DATABASE=urgentnews
       - DB_HOST=mysql
-      - PORT=3000
+      - PORT=4200
 
   mysql:
     image: yazanhamdan/mysql-image-cloud

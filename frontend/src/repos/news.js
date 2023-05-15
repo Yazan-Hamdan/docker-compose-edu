@@ -5,7 +5,7 @@ export const getRecentNews = async () => {
         const response = await fetch (`${API_URL}/`)
         const data = await response.json()
                 
-        return data[0]
+        return data
     } catch (error) {
         console.log(error)
     }
