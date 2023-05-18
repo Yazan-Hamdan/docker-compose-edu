@@ -1,5 +1,14 @@
 # DOCKER-COMPOSE-EDU
 
+## Important to notice 
+My application consists of multiple Docker Compose files, each serving a specific purpose. While it is not necessary to use these files individually, they exist to offer flexibility and the option to start services independently, if desired.
+
+For example, if you want to start only the backend and the database only, you can use the Docker Compose file located in the backend directory. This particular file is designed to set up the necessary containers for the backend services and the associated database.
+
+in the root directory of the application, you will find a Docker Compose file that utilizes the images I've pushed to Docker Hub. This file simplifies the setup process by pulling the required images and creating the appropriate containers.
+
+Feel free to choose the approach that best suits your needs and workflow. Whether you decide to start services independently using specific Docker Compose file or utilize the Docker Compose file in the root directory to start the entire application 
+
 ## Description
 
 This project is a simple educational example of a Docker Compose setup. It includes a MySQL database, a backend server built with ExpressJS, and a frontend application built with ReactJS.
@@ -41,3 +50,4 @@ The application is running on `http://localhost:4200`
 ## Frontend 
 
 The frontend application is a simple ReactJS application that fetches data from the backend API and displays the 10 most recent news articles. The frontend application is packaged as a Docker container and can be accessed in your web browser at `http://localhost:3000` once the containers are running.
+
