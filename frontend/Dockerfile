@@ -1,21 +1,26 @@
-# Base image
-FROM node:14.17.0-alpine
+# Stage 1: Build the front-end using Node.js
+FROM node:14.17.0-alpine AS builder
 
-# Set working directory
+# Set the working directory for the build stage
 WORKDIR /app
 
-# Install app dependencies
+# Copy the package.json and package-lock.json files
 COPY package*.json ./
+
+# Install the dependencies
 RUN npm install
 
-# Add app source code
+# Copy the application code
 COPY . .
 
-# Build production assets
+# Build the front-end
 RUN npm run build
 
-# Expose port
-EXPOSE 3000
+# Stage 2: Use Apache as the web server
+FROM httpd:2.4
 
-# Start command
-CMD [ "npm", "start" ]
+# Copy the built front-end files from the builder stage to the Apache document root directory
+COPY --from=builder /app/build/ /usr/local/apache2/htdocs/
+
+# Expose port 80 to allow incoming connections
+EXPOSE 80
