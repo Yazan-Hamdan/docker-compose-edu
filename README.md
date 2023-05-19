@@ -18,6 +18,9 @@ This project is a simple educational example of a Docker Compose setup. It inclu
 Before running the project, make sure you have Docker and Docker Compose installed on your machine. Once you have Docker and Docker Compose installed, follow the instructions below to run the project:
 
 * Clone the repository to your local machine.
+
+    `git clone  https://github.com/Yazan-Hamdan/docker-compose-edu`
+
 * Navigate to the project's root directory
 * Run the following command: `docker-compose up --build`.
 * Wait for the containers to start up. You should see output in the console indicating that the MySQL database, backend server, and frontend application are all running.
@@ -51,3 +54,5 @@ The application is running on `http://localhost:4200`
 
 The frontend application is a simple ReactJS application that fetches data from the backend API and displays the 10 most recent news articles. The frontend application is packaged as a Docker container and can be accessed in your web browser at `http://localhost:3000` once the containers are running.
 
+
+The application runs on apache2 server 
