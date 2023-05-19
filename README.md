@@ -41,6 +41,8 @@ created_at | BIGINT(20) UNSIGNED
 The database is pre-populated with some sample data, which is inserted when the MySQL container starts up. The SQL script that creates the database and inserts the sample data can be found in the database directory.
 
 
+Deployed image: [yazanhamdan/mysql-image-cloud](https://hub.docker.com/repository/docker/yazanhamdan/mysql-image-cloud/general)
+
 ## Backend
 
 The backend server is a simple ExpressJS application that serves a single API route: `/v1/news`. This route returns the `10` most recent news articles, based on the created_at attribute.
@@ -49,6 +51,8 @@ The backend server is built using Node.js and is packaged as a Docker container.
 
 The application is running on `http://localhost:4200`
 
+Deployed image: DockerHub Link: [yazanhamdan/docker-compose-edu-backend](https://hub.docker.com/repository/docker/yazanhamdan/docker-compose-edu-backend)
+
 
 ## Frontend 
 
@@ -56,3 +60,10 @@ The frontend application is a simple ReactJS application that fetches data from 
 
 
 The application runs on apache2 server 
+
+Deployed image: [yazanhamdan/docker-compose-edu-frontend](https://hub.docker.com/repository/docker/yazanhamdan/docker-compose-edu-frontend/general)
+
+
+
+## Note
+* all the docker files have comments describing what each line exactly does 
